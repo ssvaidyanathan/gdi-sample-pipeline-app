@@ -113,5 +113,6 @@ jobs:
           REGION: us-central1
           IMAGE_NAME: ${{ secrets.GAR_REPOSITORY }}/sample-pipeline-app:${{ github.sha }}
           PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+          SERVICE_ACCOUNT: ${{ secrets.GCP_APP_SA_EMAIL }}
         run: ./scripts/deploy.sh
 

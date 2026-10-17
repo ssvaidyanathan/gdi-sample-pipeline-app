@@ -26,6 +26,11 @@ if [[ -n "${PROJECT_ID:-}" ]]; then
     PROJECT_ARGS=("--project" "${PROJECT_ID}")
 fi
 
+SA_ARGS=()
+if [[ -n "${SERVICE_ACCOUNT:-}" ]]; then
+    SA_ARGS=("--service-account" "${SERVICE_ACCOUNT}")
+fi
+
 if [[ "${DRY_RUN:-false}" == "true" ]]; then
     echo "Dry-run validation successful for ${SERVICE_NAME}."
     exit 0
@@ -39,4 +44,5 @@ fi
     --memory="${MEMORY}" \
     --cpu="${CPU}" \
     "${PROJECT_ARGS[@]}" \
+    "${SA_ARGS[@]}" \
     "${ENV_ARGS[@]}"
