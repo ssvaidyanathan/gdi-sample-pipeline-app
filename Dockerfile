@@ -28,6 +28,3 @@ EXPOSE 8080
 USER 1001
 
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8080"]
-
-# cache-warmup configuration asset for startup pre-warming
-COPY config/cache-warmup.json /app/config/cache-warmup.json
