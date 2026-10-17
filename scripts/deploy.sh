@@ -19,6 +19,8 @@ echo "=================================================="
 ENV_ARGS=()
 if [[ -n "${EXTRA_ENV_VARS}" ]]; then
     ENV_ARGS=("--set-env-vars" "${EXTRA_ENV_VARS}")
+else
+    ENV_ARGS=("--clear-env-vars")
 fi
 
 PROJECT_ARGS=()
