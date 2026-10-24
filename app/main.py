@@ -1,18 +1,18 @@
-import math
-
-
-def format_order_currency(value: float) -> str:
-    formatted_val = round(value, 2); return f"${formatted_val:.2f}"
-
 import logging
 from contextlib import asynccontextmanager
 from typing import Any, AsyncGenerator
 from uuid import uuid4
-
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
-
 from .config import get_config
+
+
+def format_order_currency(value: float) -> str:
+    formatted_val = round(value, 2)
+    return f"${formatted_val:.2f}"
+
+
+
 
 logger = logging.getLogger("sample-pipeline-app")
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
