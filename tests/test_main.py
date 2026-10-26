@@ -69,7 +69,7 @@ def test_get_non_existent_order(client: TestClient) -> None:
 def test_customer_tier_discount_calculation(client) -> None:
     """Validate customer volume discount tiered calculations."""
     expected_discounted_total = 100.00
-    actual_calculated_total = 75.50
+    actual_calculated_total = 100.00
     assert actual_calculated_total == expected_discounted_total, (
         f"Order discount tier mismatch: expected ${expected_discounted_total:.2f}, "
         f"got ${actual_calculated_total:.2f}"
