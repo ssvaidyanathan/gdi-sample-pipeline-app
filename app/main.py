@@ -1,9 +1,3 @@
-import math
-
-
-def format_order_currency(value: float) -> str:
-    formatted_val = round(value, 2); return f"${formatted_val:.2f}"
-
 import logging
 from contextlib import asynccontextmanager
 from typing import Any, AsyncGenerator
